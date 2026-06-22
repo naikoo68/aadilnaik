@@ -114,62 +114,14 @@ const QUIZ_DATA = {
       { q: "Which curve shows the relationship between unemployment and inflation?", options: ["Laffer curve", "Phillips curve", "Lorenz curve", "Demand curve"], answer: 1, difficulty: "hard" },
       { q: "A tax levied on imported goods is known as a:", options: ["Subsidy", "Tariff", "Rebate", "Dividend"], answer: 1, difficulty: "easy" },
       { q: "Fiscal policy is primarily managed by the:", options: ["Central bank", "Government", "World Bank", "Stock market"], answer: 1, difficulty: "medium" }
-       ```javascript
-const mcqs = [
-  {
-    question: "A straight-line supply curve passing through the origin indicates:",
-    options: [
-      "a) Perfectly elastic supply",
-      "b) Unitary elastic supply",
-      "c) Inelastic supply",
-      "d) Perfectly inelastic supply"
-    ]
-  },
-
-  {
-    question: "When a straight-line supply curve cuts the Y-axis, elasticity of supply is:",
-    options: [
-      "a) Equal to one",
-      "b) Less than one",
-      "c) Greater than one",
-      "d) Zero"
-    ]
-  },
-
-  {
-    question: "A straight-line supply curve cutting the X-axis shows:",
-    options: [
-      "a) Elastic supply",
-      "b) Unitary elastic supply",
-      "c) Inelastic supply",
-      "d) Perfectly elastic supply"
-    ]
-  },
-
-  {
-    question: "The geometric method measures elasticity of supply with the help of:",
-    options: [
-      "a) Total revenue curve",
-      "b) Demand schedule",
-      "c) Shape and position of supply curve",
-      "d) Cost curve"
-    ]
-  },
-
-  {
-    question: "Which of the following represents a perfectly inelastic supply?",
-    options: [
-      "a) Horizontal supply curve",
-      "b) Vertical supply curve",
-      "c) Supply curve passing through origin",
-      "d) Supply curve cutting Y-axis"
-    ]
-  }
-];
-```
+      { q: "A straight-line supply curve passing through the origin indicates:", options: ["Perfectly elastic supply", "Unitary elastic supply", "Inelastic supply", "Perfectly inelastic supply"], answer: 1, difficulty: "medium" },
+      { q: "When a straight-line supply curve cuts the Y-axis, elasticity of supply is:", options: ["Equal to one", "Less than one", "Greater than one", "Zero"], answer: 2, difficulty: "medium" },
+      { q: "A straight-line supply curve cutting the X-axis shows:", options: ["Elastic supply", "Unitary elastic supply", "Inelastic supply", "Perfectly elastic supply"], answer: 2, difficulty: "medium" },
+      { q: "The geometric method measures elasticity of supply with the help of:", options: ["Total revenue curve", "Demand schedule", "Shape and position of supply curve", "Cost curve"], answer: 2, difficulty: "easy" },
+      { q: "Which of the following represents a perfectly inelastic supply?", options: ["Horizontal supply curve", "Vertical supply curve", "Supply curve passing through origin", "Supply curve cutting Y-axis"], answer: 1, difficulty: "easy" },
 
     ]
-  },
+  },       
 
   history: {
     name: "History",
