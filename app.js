@@ -1,5 +1,5 @@
 /* ============================================================
-   app.js  -  QuizMaster quiz engine
+   app.js  -  Aadil Quiz
    Handles: subject selection, settings, question flow, scoring,
    per-question timer, results, local-storage high scores, theming.
    ============================================================ */
@@ -8,7 +8,7 @@
   "use strict";
 
   /* ---------- Constants ---------- */
-  const TIME_PER_QUESTION = 20;          // seconds
+  const TIME_PER_QUESTION = 30;          // seconds
   const LETTERS = ["A", "B", "C", "D"];
   const HS_KEY = "quizmaster_highscores";
   const THEME_KEY = "quizmaster_theme";
