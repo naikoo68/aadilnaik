@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QuizMaster &mdash; Multi-Subject Quiz</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- ===================== Header ===================== -->
+  <header class="app-header">
+    <div class="brand">
+      <span class="brand-logo">&#129504;</span>
+      <h1>Quiz<span>Master</span></h1>
+    </div>
+    <button id="themeToggle" class="theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">
+      <span class="theme-icon">&#127769;</span>
+    </button>
+  </header>
+
+  <main class="container">
+
+    <!-- ===================== Start / Subject selection screen ===================== -->
+    <section id="startScreen" class="screen active">
+      <div class="card start-card">
+        <h2 class="screen-title">Choose Your Subject</h2>
+        <p class="screen-subtitle">Pick a topic, set your options, and test your knowledge!</p>
+
+        <div id="subjectGrid" class="subject-grid">
+          <!-- Subject cards injected by JS -->
+        </div>
+
+        <div class="options-row">
+          <div class="option-block">
+            <label for="difficultySelect">Difficulty</label>
+            <select id="difficultySelect">
+              <option value="all">All Levels</option>
+              <option value="easy">Easy</option>
+              <option value="medium">Medium</option>
+              <option value="hard">Hard</option>
+            </select>
+          </div>
+
+          <div class="option-block">
+            <label for="countSelect">Questions</label>
+            <select id="countSelect">
+              <option value="5">5</option>
+              <option value="10" selected>10</option>
+              <option value="0">All</option>
+            </select>
+          </div>
+
+          <div class="option-block toggle-block">
+            <label for="randomizeToggle">Randomize</label>
+            <label class="switch">
+              <input type="checkbox" id="randomizeToggle" checked />
+              <span class="slider"></span>
+            </label>
+          </div>
+
+          <div class="option-block toggle-block">
+            <label for="timerToggle">Timer (20s)</label>
+            <label class="switch">
+              <input type="checkbox" id="timerToggle" checked />
+              <span class="slider"></span>
+            </label>
+          </div>
+        </div>
+
+        <button id="startBtn" class="btn btn-primary btn-block" disabled>Select a subject to start</button>
+
+        <div id="highScoreBox" class="high-score-box hidden">
+          <span class="trophy">&#127942;</span>
+          <span id="highScoreText"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== Quiz screen ===================== -->
+    <section id="quizScreen" class="screen">
+      <div class="card quiz-card">
+        <div class="quiz-topbar">
+          <div class="quiz-meta">
+            <span id="subjectBadge" class="subject-badge"></span>
+            <span id="questionCounter" class="question-counter">Question 1 of 10</span>
+          </div>
+          <div id="timerWrap" class="timer-wrap">
+            <span class="timer-icon">&#9201;&#65039;</span>
+            <span id="timerText">20</span>
+          </div>
+        </div>
+
+        <div class="progress-track">
+          <div id="progressBar" class="progress-fill"></div>
+        </div>
+
+        <div class="score-line">
+          <span>Score: <strong id="liveScore">0</strong></span>
+        </div>
+
+        <div id="questionBox" class="question-box">
+          <h2 id="questionText" class="question-text"></h2>
+          <div id="optionsList" class="options-list">
+            <!-- Option buttons injected by JS -->
+          </div>
+        </div>
+
+        <div class="quiz-footer">
+          <button id="quitBtn" class="btn btn-ghost">Quit</button>
+          <button id="nextBtn" class="btn btn-primary" disabled>Next Question</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== Results screen ===================== -->
+    <section id="resultScreen" class="screen">
+      <div class="card result-card">
+        <div id="resultEmoji" class="result-emoji">&#127881;</div>
+        <h2 id="resultHeadline" class="screen-title">Quiz Complete!</h2>
+        <p id="resultMessage" class="screen-subtitle"></p>
+
+        <div class="score-ring-wrap">
+          <svg class="score-ring" viewBox="0 0 120 120">
+            <circle class="ring-bg" cx="60" cy="60" r="52" />
+            <circle id="ringProgress" class="ring-fg" cx="60" cy="60" r="52" />
+          </svg>
+          <div class="score-ring-text">
+            <span id="percentText">0%</span>
+          </div>
+        </div>
+
+        <div class="result-stats">
+          <div class="stat">
+            <span class="stat-value" id="statScore">0/0</span>
+            <span class="stat-label">Score</span>
+          </div>
+          <div class="stat correct">
+            <span class="stat-value" id="statCorrect">0</span>
+            <span class="stat-label">Correct</span>
+          </div>
+          <div class="stat incorrect">
+            <span class="stat-value" id="statIncorrect">0</span>
+            <span class="stat-label">Incorrect</span>
+          </div>
+        </div>
+
+        <div id="newRecordBadge" class="new-record hidden">&#11088; New High Score!</div>
+
+        <div class="result-actions">
+          <button id="restartBtn" class="btn btn-primary">Restart Quiz</button>
+          <button id="homeBtn" class="btn btn-ghost">Change Subject</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="app-footer">
+    <p>Built with HTML, CSS &amp; JavaScript &middot; <span id="year"></span></p>
+  </footer>
+
+  <script src="questions.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
